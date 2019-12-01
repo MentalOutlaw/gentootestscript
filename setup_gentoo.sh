@@ -51,9 +51,10 @@ rm -rf /portage
 echo "clened up files"
 echo "mounted all the things"
 echo "you should now chroot into the new environment"
-echo -e ${LIGHTGREEN}"chroot /mnt/gentoo /bin/bash"
-echo -e ${LIGHTGREEN}"source /etc/profile"
-echo -e ${LIGHTGREEN}"export PS1=\"(chroot) \${PS1}\""
+chroot /mnt/gentoo post_chroot.sh
+#echo -e ${LIGHTGREEN}"chroot /mnt/gentoo /bin/bash"
+#echo -e ${LIGHTGREEN}"source /etc/profile"
+#echo -e ${LIGHTGREEN}"export PS1=\"(chroot) \${PS1}\""
 
 #below this point we have to create a seperate script to run in the chroot portion
 #chroot /mnt/gentoo /bin/bash << "EOT"
