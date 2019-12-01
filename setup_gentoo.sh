@@ -22,7 +22,6 @@ echo "copied over package.use files to /etc/portage/package.use/"
 
 #copies specific package stuff over (this might not be necessary)
 cp -a /mnt/gentoo/gentootestscript-master/gentoo/portage/linux_drivers /mnt/gentoo/etc/portage/
-cp -a /mnt/gentoo/gentootestscript-master/gentoo/portage/neovim.accept_keywords /mnt/gentoo/etc/portage/
 cp -a /mnt/gentoo/gentootestscript-master/gentoo/portage/nvidia_package.license /mnt/gentoo/etc/portage/
 cp -a /mnt/gentoo/gentootestscript-master/gentoo/portage/package.license /mnt/gentoo/etc/portage
 cp -a /mnt/gentoo/gentootestscript-master/gentoo/portage/package.accept_keywords /mnt/gentoo/etc/portage/
