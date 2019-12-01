@@ -1,6 +1,8 @@
 #TODO
 #Replace all the echo with printf
-
+cd gentootestscript-master
+scriptdir=$(pwd)
+cd ..
 LIGHTGREEN='\033[1;32m'
 LIGHTBLUE='\033[1;34m'
 echo -e ${LIGHTBLUE}"Enter the username for your NON ROOT user"
@@ -99,6 +101,7 @@ echo "dhcp enabled"
 emerge app-admin/sysklogd
 emerge app-admin/sudo
 rm -rf /etc/sudoers
+cd $scriptdir
 cp sudoers /etc/
 echo "installed sudo and enabled it for wheel group"
 rc-update add sysklogd default
@@ -110,6 +113,9 @@ emerge --verbose sys-boot/grub:2
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 useradd -m -G users,wheel,audio -s /bin/bash $username
+cd ..
+cp gentootestscript-master.zip /home/$username
+unzip /home/$username/gentootestscript-master.zip
 echo "preparing to exit the system, run the following commands and then reboot without the CD"
 echo "you should now have a working Gentoo installation, dont forget to set your root and user passwords!"
 echo -e ${LIGHTGREEN}"passwd"
