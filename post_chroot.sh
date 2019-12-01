@@ -1,5 +1,8 @@
 #TODO
 #Replace all the echo with printf
+source /etc/profile
+export PS1="(chroot) ${PS1}"
+
 cd gentootestscript-master
 scriptdir=$(pwd)
 cd ..
