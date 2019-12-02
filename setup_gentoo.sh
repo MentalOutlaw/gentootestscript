@@ -13,18 +13,18 @@ unzip /mnt/gentoo/gentootestscript-master/gentoo/portage.zip
 #mv /mnt/gentoo/etc/portage/make.conf /mnt/gentoo/etc/portage/backup/
 echo "moved old make.conf to /backup/"
 #copies our pre-made make.conf over
-cp /portage/make.conf /mnt/gentoo/etc/portage/
+cp /mnt/gentoo/portage/make.conf /mnt/gentoo/etc/portage/
 echo "copied new make.conf to /etc/portage/"
 
 #copies specific package.use stuff over
-cp -a /portage/package.use/. /mnt/gentoo/etc/portage/package.use/
+cp -a /mnt/gentoo/portage/package.use/. /mnt/gentoo/etc/portage/package.use/
 echo "copied over package.use files to /etc/portage/package.use/"
 
 #copies specific package stuff over (this might not be necessary)
-cp /portage/linux_drivers /mnt/gentoo/etc/portage/
-cp /portage/nvidia_package.license /mnt/gentoo/etc/portage/
-cp /portage/package.license /mnt/gentoo/etc/portage
-cp /portage/package.accept_keywords /mnt/gentoo/etc/portage/
+cp /mnt/gentoo/portage/linux_drivers /mnt/gentoo/etc/portage/
+cp /mnt/gentoo/portage/nvidia_package.license /mnt/gentoo/etc/portage/
+cp /mnt/gentoo/portage/package.license /mnt/gentoo/etc/portage
+cp /mnt/gentoo/portage/package.accept_keywords /mnt/gentoo/etc/portage/
 echo "copied over specific package stuff"
 
 #gentoo ebuild repository
