@@ -131,4 +131,5 @@ echo -e ${LIGHTGREEN}"cd"
 echo -e ${LIGHTGREEN}"umount -l /mnt/gentoo/dev{/shm,/pts,}"
 echo -e ${LIGHTGREEN}"umount -R /mnt/gentoo"
 echo -e ${LIGHTGREEN}"reboot"
+rm -rf /post_chroot.sh
 exit
