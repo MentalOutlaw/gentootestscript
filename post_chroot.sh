@@ -117,8 +117,8 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 useradd -m -G users,wheel,audio -s /bin/bash $username
 cd ..
-cp gentootestscript-master.zip /home/$username
-unzip /home/$username/gentootestscript-master.zip
+mv gentootestscript-master.zip /home/$username
+rm -rf /gentootestscript-master
 echo "preparing to exit the system, run the following commands and then reboot without the CD"
 echo "you should now have a working Gentoo installation, dont forget to set your root and user passwords!"
 echo -e ${LIGHTGREEN}"passwd"
