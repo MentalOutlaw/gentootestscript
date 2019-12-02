@@ -50,5 +50,5 @@ app-admin/keepassxc
 net-im/signal-desktop-bin
 www-client/firefox
 net-misc/youtube-dl
-media-video/mpv
+#media-video/mpv
 media-gfx/gimp
