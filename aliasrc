@@ -13,7 +13,7 @@ alias \
 	yt="youtube-dl --add-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner" \
-  ka="killall" \
+  	ka="killall" \
 	g="git" \
 	trem="transmission-remote" \
 	YT="youtube-viewer" \
