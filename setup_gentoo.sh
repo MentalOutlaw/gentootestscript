@@ -3,7 +3,7 @@
 
 LIGHTGREEN='\033[1;32m'
 
-#cd /mnt/gentoo/
+cd /mnt/gentoo/
 stage3=$(ls stage3*)
 echo "found $stage3"
 tar xpvf $stage3 --xattrs-include='*.*' --numeric-owner
