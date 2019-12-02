@@ -24,3 +24,7 @@ sh rice-gentoo.sh
 echo "Installing software listed in software.txt..."
 emerge --autounmask-write $SOFTWARE
 echo "software installed"
+cd ..
+chmod + x install_wordlist.sh
+sh install_wordlist.sh
+echo "enumeration word list installed in /usr/share/wordlist"
