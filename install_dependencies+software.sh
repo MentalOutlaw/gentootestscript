@@ -23,6 +23,13 @@ chmod +x rice-gentoo.sh
 sh rice-gentoo.sh
 echo "Installing software listed in software.txt..."
 emerge --autounmask-write $SOFTWARE
+git clone https://github.com/sqlmapproject/sqlmap.git
+mv sqlmap/ /root/.config/
+touch sqlmap
+echo "python /root/.config/sqlmap/sqlmap.py" >> sqlmap
+chmod +x /root/.config/sqlmap/sqlmap
+mv /root/.config/sqlmap/sqlmap /usr/bin/
+
 echo "software installed"
 cd ..
 chmod + x install_wordlist.sh
