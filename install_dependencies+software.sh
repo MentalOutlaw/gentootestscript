@@ -17,6 +17,8 @@ USE="perl xft" emerge x11-terms/rxvt-unicode
 USE="cli libmpv" emerge media-video/mpv
 echo "installed dependencies"
 sleep 5
+#defines the directory this script runs in so we can easily return to it
+script_home=$(pwd)
 unzip rice.zip
 cd apps/
 chmod +x rice-gentoo.sh
@@ -25,16 +27,15 @@ echo "Installing software listed in software.txt..."
 emerge --autounmask-write $SOFTWARE
 
 #installs software from pentoo overlay
+cd $script_home
 mkdir -p /usr/local/portage/net-analyzer/responder
-mkdir -p /usr/local/portage/dev-db/sqlmap/
+mv ebuilds/responder-2.3.4.0-r1.ebuild /usr/local/portage/net-analyzer/responder/
 cd /usr/local/portage/net-analyzer/responder
-
-#installing our manifests
-cd /usr/local/portage/net-analyzer/responder/
 ebuild responder-2.3.4.0-r1.ebuild manifest
+emerge --autounmask-write net-analyzer/responder
+cd $script_home
 
 echo "software installed"
-cd ..
 chmod + x install_wordlist.sh
 sh install_wordlist.sh
 echo "enumeration word list installed in /usr/share/wordlist"
