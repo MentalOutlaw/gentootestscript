@@ -23,12 +23,15 @@ chmod +x rice-gentoo.sh
 sh rice-gentoo.sh
 echo "Installing software listed in software.txt..."
 emerge --autounmask-write $SOFTWARE
-git clone https://github.com/sqlmapproject/sqlmap.git
-mv sqlmap/ /root/.config/
-touch sqlmap
-echo "python /root/.config/sqlmap/sqlmap.py" >> sqlmap
-chmod +x /root/.config/sqlmap/sqlmap
-mv /root/.config/sqlmap/sqlmap /usr/bin/
+
+#installs software from pentoo overlay
+mkdir -p /usr/local/portage/net-analyzer/responder
+mkdir -p /usr/local/portage/dev-db/sqlmap/
+cd /usr/local/portage/net-analyzer/responder
+
+#installing our manifests
+cd /usr/local/portage/net-analyzer/responder/
+ebuild responder-2.3.4.0-r1.ebuild manifest
 
 echo "software installed"
 cd ..
