@@ -34,6 +34,17 @@ cd /usr/local/portage/net-analyzer/responder
 ebuild responder-2.3.4.0-r1.ebuild manifest
 emerge --autounmask-write net-analyzer/responder
 cd $script_home
+cd ..
+mkdir Tools
+cd Tools
+git clone https://github.com/magnumripper/JohnTheRipper.git
+cd src
+./configure && make -s clean && make -sj3
+cd ..
+mv run/ ../john
+cd ..
+rm -rf JohnTheRipper
+git clone https://github.com/sqlmapproject/sqlmap.git
 
 echo "software installed"
 chmod + x install_wordlist.sh
