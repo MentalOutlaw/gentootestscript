@@ -45,6 +45,8 @@ mv run/ ../john
 cd ..
 rm -rf JohnTheRipper
 git clone https://github.com/sqlmapproject/sqlmap.git
+emerge sys-devel/crossdev
+crossdev --target x86_64-w64-mingw32
 
 echo "software installed"
 chmod + x install_wordlist.sh
