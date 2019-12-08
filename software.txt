@@ -20,6 +20,8 @@ dev-lang/go
 dev-lang/ruby
 dev-python/pip
 dev-libs/boost
+net-ftp/ftp
+net-misc/netkit-telnetd
 
 #security tools
 net-analyzer/tcpdump
