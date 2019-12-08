@@ -19,6 +19,7 @@ net-vpn/openvpn
 dev-lang/go
 dev-lang/ruby
 dev-python/pip
+dev-libs/boost
 
 #security tools
 net-analyzer/tcpdump
