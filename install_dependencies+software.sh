@@ -29,10 +29,28 @@ emerge --autounmask-write $SOFTWARE
 #installs software from pentoo overlay
 cd $script_home
 mkdir -p /usr/local/portage/net-analyzer/responder
+#mkdir -p /usr/local/portage/cross-x86_64-w64-mingw32
+mkdir -p /usr/local/portage/dev-db/sqlmap
+mkdir -p /usr/local/portage/dev-python/impacket
+mkdir -p /usr/local/portage/dev-python/ldapdomaindump
+mkdir -p /usr/local/portage/dev-python/pycryptodomex
 mv ebuilds/responder-2.3.4.0-r1.ebuild /usr/local/portage/net-analyzer/responder/
+mv ebuilds/ldapdomaindump-0.9.1.ebuild /usr/local/portage/dev-python/ldapdomaindump
+mv ebuilds/impacket-0.9.20.ebuild /usr/local/portage/dev-python/impacket
+mv ebuilds/pycryptodomex-3.9.4.ebuild /usr/local/portage/dev-python/pycryptodomex
+mv ebuilds/
 cd /usr/local/portage/net-analyzer/responder
 ebuild responder-2.3.4.0-r1.ebuild manifest
 emerge --autounmask-write net-analyzer/responder
+cd /usr/local/portage/dev-python/ldapdomaindump
+ebuild ldapdomaindump-0.9.1.ebuild manifest
+emerge --autounmask-write dev-python/ldapdomaindump
+cd /usr/local/portage/dev-python/pycryptodomex
+ebuild pycryptodomex-3.9.4.ebuild manifest
+emerge --autounmask-write dev-python/pycryptodomex
+cd /usr/local/portage/dev-python/impacket
+ebuild impacket-0.9.20.ebuild manifest
+emerge --autounmask-write dev-python/impacket
 cd $script_home
 cd ..
 mkdir Tools
