@@ -18,6 +18,7 @@ net-misc/whois
 net-vpn/openvpn
 dev-lang/go
 dev-lang/ruby
+dev-python/pip
 
 #security tools
 net-analyzer/tcpdump
