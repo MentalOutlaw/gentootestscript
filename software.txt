@@ -22,6 +22,8 @@ dev-python/pip
 dev-libs/boost
 net-ftp/ftp
 net-misc/netkit-telnetd
+app-portage/eix
+
 
 #security tools
 net-analyzer/tcpdump
@@ -47,6 +49,8 @@ app-crypt/mhash
 app-crypt/openvpn-blacklist
 net-wireless/aircrack-ng
 net-misc/socat
+media-libs/exiftool
+app-misc/binwalk
 
 #regular tools
 app-admin/keepassxc
