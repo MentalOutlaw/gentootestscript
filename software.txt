@@ -23,6 +23,7 @@ dev-libs/boost
 net-ftp/ftp
 net-misc/netkit-telnetd
 app-portage/eix
+net-nds/openldap
 
 
 #security tools
