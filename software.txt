@@ -38,6 +38,9 @@ net-analyzer/hydra
 net-analyzer/yersinia
 net-analyzer/masscan
 net-analyzer/arp-scan
+net-analyzer/hping
+net-proxy/mitmproxy
+net-vpn/httptunnel
 net-dns/dnshijacker  #All ebuilds have been masked
 net-dns/dnswalk
 net-dns/dnscap #All ebuilds have been masked
@@ -52,6 +55,7 @@ net-wireless/aircrack-ng
 net-misc/socat
 media-libs/exiftool
 app-misc/binwalk
+
 
 #regular tools
 app-admin/keepassxc
