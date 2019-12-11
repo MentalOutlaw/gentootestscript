@@ -34,11 +34,14 @@ mkdir -p /usr/local/portage/dev-db/sqlmap
 mkdir -p /usr/local/portage/dev-python/impacket
 mkdir -p /usr/local/portage/dev-python/ldapdomaindump
 mkdir -p /usr/local/portage/dev-python/pycryptodomex
+mkdir -p /usr/local/portage/net-analyzer/smbmap
+
 mv ebuilds/responder-2.3.4.0-r1.ebuild /usr/local/portage/net-analyzer/responder/
 mv ebuilds/ldapdomaindump-0.9.1.ebuild /usr/local/portage/dev-python/ldapdomaindump
 mv ebuilds/impacket-0.9.20.ebuild /usr/local/portage/dev-python/impacket
 mv ebuilds/pycryptodomex-3.9.4.ebuild /usr/local/portage/dev-python/pycryptodomex
-mv ebuilds/
+mv ebuilds/smbmap-1.1.0-r1.ebuild /usr/local/portage/net-analyzer/smbmap
+
 cd /usr/local/portage/net-analyzer/responder
 ebuild responder-2.3.4.0-r1.ebuild manifest
 emerge --autounmask-write net-analyzer/responder
@@ -51,6 +54,9 @@ emerge --autounmask-write dev-python/pycryptodomex
 cd /usr/local/portage/dev-python/impacket
 ebuild impacket-0.9.20.ebuild manifest
 emerge --autounmask-write dev-python/impacket
+cd /usr/local/portage/net-analyzer/smbmap
+ebuild smbmap-1.1.0-r1.ebuild manifest
+emerge --autounmask-write net-analyzer/smbmap
 cd $script_home
 cd ..
 mkdir Tools
