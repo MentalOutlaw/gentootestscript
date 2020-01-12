@@ -60,3 +60,8 @@ printf ${LIGHTGREEN}"export PS1=\"(chroot) \${PS1}\""
 #chroot /mnt/gentoo /bin/bash << "EOT"
 #source /etc/profile
 #export PS1="(chroot) ${PS1}"
+
+chroot /mnt/gentoo /bin/bash -x <<'EOF'
+su -
+./post_chroot.sh
+EOF
