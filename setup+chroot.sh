@@ -55,13 +55,11 @@ chroot /mnt/gentoo post_chroot.sh
 printf ${LIGHTGREEN}"chroot /mnt/gentoo /bin/bash"
 printf ${LIGHTGREEN}"source /etc/profile"
 printf ${LIGHTGREEN}"export PS1=\"(chroot) \${PS1}\""
+cd /mnt/gentoo
 
 #below this point we have to create a seperate script to run in the chroot portion
 #chroot /mnt/gentoo /bin/bash << "EOT"
 #source /etc/profile
 #export PS1="(chroot) ${PS1}"
 
-chroot /mnt/gentoo /bin/bash -x <<'EOF'
-su -
-./post_chroot.sh
-EOF
+chroot /mnt/gentoo post_chroot.sh
