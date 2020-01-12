@@ -62,4 +62,4 @@ cd /mnt/gentoo
 #source /etc/profile
 #export PS1="(chroot) ${PS1}"
 
-chroot /mnt/gentoo post_chroot.sh
+chroot /mnt/gentoo ./post_chroot.sh
