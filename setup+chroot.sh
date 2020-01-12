@@ -55,6 +55,7 @@ chroot /mnt/gentoo post_chroot.sh
 echo -e ${LIGHTGREEN}"chroot /mnt/gentoo /bin/bash"
 echo -e ${LIGHTGREEN}"source /etc/profile"
 echo -e ${LIGHTGREEN}"export PS1=\"(chroot) \${PS1}\""
+###Start chroot portion of script
 cat << EOF | chroot /mnt/gentoo /bin/bash
 source /etc/profile
 cd gentootestscript-master
@@ -71,13 +72,10 @@ echo -e ${LIGHTBLUE}"Enter Yes to make a kernel from scratch, edit to edit the h
 read kernelanswer
 echo -e ${LIGHTBLUE}"Enter the Hostname you want to use"
 read hostname
-
-
 mount /dev/sda1 /boot
 echo "mounted boot"
 emerge-webrsync
 echo "webrsync complete"
-
 if [ $sslmigrateanswer = "yes" ]; then
 	echo "beginning openssl to libressl migration"
 	emerge -uvNDq world
@@ -101,9 +99,7 @@ if [ $sslmigrateanswer = "yes" ]; then
 else
 	echo "using default openssl"
 fi
-
 echo "preparing to do big emerge"
-
 emerge --verbose --update --deep --newuse @world
 echo "big emerge complete"
 echo "America/NewYork" > /etc/timezone
@@ -115,7 +111,6 @@ locale-gen
 echo "script complete"
 eselect locale set 4
 env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
-
 #Installs the kernel
 emerge sys-kernel/gentoo-sources
 cd /usr/src/linux
@@ -144,7 +139,6 @@ else
 	make install
 	echo "Kernel installed"
 fi
-
 #enables DHCP
 sed -i -e "s/localhost/$hostname/g" /etc/conf.d/hostname
 emerge --noreplace net-misc/netifrc
@@ -164,7 +158,6 @@ echo "installed sudo and enabled it for wheel group"
 rc-update add sysklogd default
 emerge sys-apps/mlocate
 emerge net-misc/dhcpcd
-
 #installs grub
 emerge --verbose sys-boot/grub:2
 grub-install /dev/sda
