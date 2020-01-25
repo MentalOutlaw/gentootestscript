@@ -3,6 +3,8 @@
 
 LIGHTGREEN='\033[1;32m'
 
+chmod +x post_chroot.sh
+cp post_chroot.sh /mnt/gentoo/
 cd /mnt/gentoo/
 stage3=$(ls stage3*)
 echo "found $stage3"
