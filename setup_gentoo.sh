@@ -50,7 +50,7 @@ mount --rbind /dev /mnt/gentoo/dev
 mount --make-rslave /mnt/gentoo/dev
 
 rm -rf /portage
-echo "clened up files"
+echo "claened up files"
 echo "mounted all the things"
 echo "you should now chroot into the new environment"
 chroot /mnt/gentoo post_chroot.sh
